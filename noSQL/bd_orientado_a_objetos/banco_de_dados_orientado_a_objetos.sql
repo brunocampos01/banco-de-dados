@@ -168,24 +168,3 @@ WHERE p.idade() > 30;
 SELECT nome, cpf, p.Class_Name AS classe_pertencente
 FROM pessoas p 
 WHERE (p IS OF (medicos, pacientes_conveniados));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
