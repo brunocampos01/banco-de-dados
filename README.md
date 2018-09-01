@@ -1,5 +1,6 @@
 # Banco de Dados
 ### INE5613 - banco de dados I
+ - Modelagem conceitual  
 ### INE5426 - banco de dados II
 ### INE5600 - banco de dados III
  - Banco de dados orientado a objetos
