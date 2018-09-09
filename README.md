@@ -18,7 +18,7 @@
  - [Big Data e Banco de Dados: aulas](https://)
  - [Big Data e Banco de Dados:exercícios](https://)
  ---
- ### Livro de referência: 
+ ### Livros de referência: 
   - [Sistemas de Banco de Dados - Elmasri e Navathe - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/bd_relacional/livros/Sistemas%20de%20Banco%20de%20Dados%20navathe%206%C2%AA%20Edicao.pdf)
    - [Sistemas de Gerenciamento de Banco de Dados - Ramakrishnan e Gehrke - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/bd_relacional/livros/Sistemas%20de%20Gerenciamento%20de%20Banco%20de%20Dados%20-%203%C2%AA%20Ed.pdf)
   
