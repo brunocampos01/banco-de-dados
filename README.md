@@ -9,8 +9,8 @@
 ### INE5600 - banco de dados III
  - [Banco de dados orientado a objetos: aulas](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/bd_orientado_a_objetos)
  - [Banco de dados orientado a objetos: exercícios](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/exercicios_bdoo)
- - [Bancos de Dados Temporais: aulas](https://)
- - [Bancos de Dados Temporais: exercícios](https://)
+ - [Bancos de Dados Temporais: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/aulas/bd_temporais)
+ - [Bancos de Dados Temporais: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_bdt)
  - [Bancos de Dados Geográficos: aulas](https://)
  - [Bancos de Dados Geográficos: exercícios](https://)
  - [Bancos de Dados XML: aulas](https://)
