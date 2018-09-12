@@ -1,4 +1,3 @@
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
 # Banco de Dados
 ### INE5613 - banco de dados I e INE5426 - banco de dados II
  - [Modelagem](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
