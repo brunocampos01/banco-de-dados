@@ -4,7 +4,7 @@
  - [Normalização](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
  - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/algebra_e_calculo)
  - [SQL: aulas](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/sql)
- - [SQL: exercicios](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/exercicios_sql)
+ - [SQL: exercícios](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/exercicios_sql)
 ---
 ### INE5600 - banco de dados III
  - [Banco de dados orientado a objetos: aulas](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/bd_orientado_a_objetos)
