@@ -11,7 +11,7 @@
  - [Banco de dados orientado a objetos: exercícios](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/exercicios_bdoo)
  - [Bancos de Dados Temporais: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/aulas/bd_temporais)
  - [Bancos de Dados Temporais: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_bdt)
- - [Bancos de Dados Geográficos: aulas](https://)
+ - [Bancos de Dados Geográficos: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/aulas/bd_geograficos)
  - [Bancos de Dados Geográficos: exercícios](https://)
  - [Bancos de Dados XML: aulas](https://)
  - [Bancos de Dados XML:exercícios](https://)
