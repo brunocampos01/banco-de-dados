@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<livro ISBN="4"> 
+  <titulo>ERBD 2007</titulo>
+  <preco>38</preco>
+  <evento>
+	<local>
+		<cidade>Caxias do Sul</cidade>
+		<estado>RS</estado>
+	</local>
+	<dataInicio>09-04-2007</dataInicio>
+	<dataTermino>11-04-2007</dataTermino>
+  </evento>  
+  <editora>Editora da UCS</editora>
+</livro>

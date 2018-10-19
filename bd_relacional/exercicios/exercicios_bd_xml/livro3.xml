@@ -1,0 +1,11 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<livro ISBN="3"> 
+  <titulo>Sistemas de Informacao</titulo>
+  <preco>208</preco>
+  <autor> 
+    <nome>Ana Pereira</nome>
+    <mail>ps@ig.com.br</mail>
+    <mail>anap@zzz.com</mail>
+  </autor>
+  <editora>Campus</editora>
+</livro>

@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<livro ISBN="1"> 
+  <titulo>Tecnologia XML</titulo>
+  <preco>79</preco>
+  <autor> 
+    <nome>Joao da Silva</nome>
+    <mail>js@hotmail.com</mail>
+    <mail>jsilva@xxx.com</mail>
+  </autor>
+  <autor> 
+    <nome>Maria Souza</nome>
+  </autor>
+  <editora>Campus</editora>
+</livro>
