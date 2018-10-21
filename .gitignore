@@ -1,0 +1,27 @@
+# Cached builds
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.odt#
+.ipynb_checkpoints/
+.ropeproject/
+.cache/
+.coverage
+
+# Build directories
+docs/_build/
+build/
+dist/
+venv/
+
+# Python-boilerplate auto generated files
+src/ejudge_server/__meta__.py
+
+# IDEs
+.idea/
+
+# Testing and temporary files
+.tox/
