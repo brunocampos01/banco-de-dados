@@ -13,8 +13,8 @@
  - [Bancos de Dados Temporais: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_bdt)
  - [Bancos de Dados Geográficos: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/aulas/bd_geograficos)
  - [Bancos de Dados Geográficos: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_bdgeograficos)
- - [Bancos de Dados XML: aulas](https://)
- - [Bancos de Dados XML:exercícios](https://)
+ - [Bancos de Dados XML: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/aulas/bd_xml)
+ - [Bancos de Dados XML:exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_bd_xml)
  - [Big Data e Banco de Dados: aulas](https://)
  - [Big Data e Banco de Dados:exercícios](https://)
  ---
