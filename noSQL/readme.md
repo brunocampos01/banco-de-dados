@@ -1,8 +1,6 @@
 # Comands MongoDB
-
-Download: https://www.mongodb.com/download-center/community
-
 Doc: https://docs.mongodb.com/manual/
+Download: https://www.mongodb.com/download-center/community
 
 ---
 
@@ -25,8 +23,8 @@ Doc: https://docs.mongodb.com/manual/
 
 ---
 
-### SELECT *
-`NAME-DB.insert()`
+###  
+``
 
 ### Create Collection
 `db.createCollection(“nome coleção”)`
