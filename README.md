@@ -1,4 +1,5 @@
 # Banco de Dados
+![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 ### INE5613 - banco de dados I e INE5426 - banco de dados II
  - [Modelagem](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
  - [Normalização](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
