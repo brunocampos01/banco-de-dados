@@ -3,7 +3,7 @@
 ### INE5613 - banco de dados I e INE5426 - banco de dados II
  - [Modelagem](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
  - [Normalização](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/modelagem_e_normalizacao)
- - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/algebra_e_calculo)
+ - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco-de-dados/tree/master/algebra_e_calculo)
  - [SQL: aulas](https://github.com/brunocampos01/banco_de_dados/tree/master/bd_relacional/aulas/sql)
  - [SQL: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_relacional/exercicios/exercicios_sql)
 ---
