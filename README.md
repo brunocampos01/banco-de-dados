@@ -22,8 +22,8 @@
  - [Bancos de Dados Geográficos: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bdgeograficos)
  - [Bancos de Dados XML: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_xml)
  - [Bancos de Dados XML: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bd_xml)
- - [Big Data e Banco de Dados: aulas](https://)
- - [Big Data e Banco de Dados: exercícios](https://)
+ - [Not only (NoSQL)](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_noSQL)
+ - [New SQL](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_newSQL)
  ---
  ### Livros de referência: 
   - [Sistemas de Banco de Dados - Elmasri e Navathe - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Banco%20de%20Dados%20navathe%206%C2%AA%20Edicao.pdf)
