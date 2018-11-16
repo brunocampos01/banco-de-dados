@@ -31,11 +31,11 @@
    - [Use a cabeca - SQL](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Use%20a%20Cabeca%20-%20SQL.pdf)
 ---
 ### Como contribuir ?
-1. [Fork](fork) the official repository.
-2. Create a topic branch.
-3. *Implement your feature or bug fix.*
-4. Add, commit, and **push** your changes.
-5. Submit a pull request.
+1. [Fork](fork) este repositorio.
+2. Crie um branch topic.
+3. *Implemente sua feature ou faca um bug fix ou acrecente algo relevante*
+4. Add, commit, e **push** suas alteracoes.
+5. Submit um pull request.
 ---
 ### Autor
 - Bruno Aurélio Rôzza de Moura Campos (brunocampos01@gmail.com)
