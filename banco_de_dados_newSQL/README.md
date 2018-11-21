@@ -6,12 +6,12 @@
 <img src="images/newsql.png" width=800/>
 <br/>
 
-- BDR - são bons em consultas complexas e suportam ACID, porem não são bons para big data porque é dificil escalar.
+- **BD Relational** - são bons em consultas complexas e suportam ACID, porém não são bons para big data por questões de escalabilidade.
 <img src="images/acid.png" width=600/>
 <br/>
 <br/>
 
-- BD NoSQL - são bons para escalar e uma boa escolha paraa big data, porem não se preocuam com o ACID(consistencia) e não suportam consultas complexas em SQL.
+- **BD NoSQL** - são bons para escalar e uma boa escolha para big data, porém não se preocupam com o ACID(consistencia) e não suportam consultas complexas em SQL.
 <br/>
 <img src="images/types_nosql.png" width=800/>
 <br/>
