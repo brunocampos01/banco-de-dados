@@ -1,19 +1,19 @@
 # Transações
-É qualquer execução única de um programa usáriuo que exercce uma série de operações.
+É qualquer execução única de um programa usuário que exerce uma série de operações.
 
 ## Propriedades:
-Todo banco de dados RELACIONAL deve possuir as propriedades ACID:
-ATOMICIDADE: todas as operações de uma transação são realizadas.
-CONSISTENCIA: leva o DB de um estado consistente para outro estado consistente.
-INDEPENDENCIA: o processamento de transações não deve interferir em outras transações
-DURABILIDADE: resultados de operações confirmadas não devem interferir em outras transações.
+Todo banco de dados RELACIONAL deve possuir as propriedades ACID:<br/>
+ATOMICIDADE: todas as operações de uma transação são realizadas.<br/>
+CONSISTENCIA: leva o DB de um estado consistente para outro estado consistente.<br/>
+INDEPENDENCIA: o processamento de transações não deve interferir em outras transações<br/>
+DURABILIDADE: resultados de operações confirmadas não devem interferir em outras transações.<br/>
 
 ## Controle de transações
 Controle de transações serve para garantir as caracteristicas fundamentais de uma transação (ACID).
 
 ## Escalonamento de transações
-Com lock<br\>
-otimista
+Com lock<br/>
+otimista<br/>
 ### Protocolo 2phase commit
 
 #### Preparação
@@ -46,3 +46,5 @@ A fragmentação pode ser de 2 formas:
 ## Replicação de DB
 ...
 # 
+<br/>
+<br/>
