@@ -12,14 +12,15 @@
  - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco-de-dados/tree/master/algebra_e_calculo)
  - [SQL: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/aulas)
  - [SQL: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/exercicios)
-
- <img src="images/sql_join.png" width="50%" height="50%" /> 
  
 ---
+
 ### INE5426 - banco de dados II
 - [Tuning em banco de dados](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_II)
 - [Seminario sobre a rede Tangle (blockchain 3.0)](https://github.com/brunocampos01/banco-de-dados/blob/master/bd_II/exercicios/seminario_rede_tangle.pptx)
+
 ---
+
 ### INE5600 - banco de dados III
  - [Banco de dados orientado à objetos: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_orientado_a_objetos)
  - [Banco de dados orientado à objetos: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bdoo)
@@ -32,11 +33,14 @@
  - [Not only (NoSQL)](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_noSQL)
  - [New SQL](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_newSQL)
  ---
+ 
  ### Livros de referência: 
   - [Sistemas de Banco de Dados - Elmasri e Navathe - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Banco%20de%20Dados%20navathe%206%C2%AA%20Edicao.pdf)
    - [Sistemas de Gerenciamento de Banco de Dados - Ramakrishnan e Gehrke - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Gerenciamento%20de%20Banco%20de%20Dados%20-%203%C2%AA%20Ed.pdf)
    - [Use a cabeca - SQL](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Use%20a%20Cabeca%20-%20SQL.pdf)
+   
 ---
+
 ### Como contribuir ?
 1. [Fork](fork) este repositorio.
 2. Crie um branch topic.
