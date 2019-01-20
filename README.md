@@ -1,13 +1,19 @@
-# Banco de Dados
+# Banco de Dados 
+
+<img src="images/image_bd.png" width="10%" height="10%" align="center" valign="center"/> 
+
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 ![License](https://img.shields.io/badge/SQL-learning-yellowgreen.svg)
 ![License](https://img.shields.io/badge/UFSC-Banco%20de%20Dados-red.svg)
+
 ### INE5613 - banco de dados I
  - [Modelagem](https://github.com/brunocampos01/banco-de-dados/tree/master/modelagem)
  - [Normalização](https://github.com/brunocampos01/banco-de-dados/tree/master/normalizacao)
  - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco-de-dados/tree/master/algebra_e_calculo)
  - [SQL: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/aulas)
  - [SQL: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/exercicios)
+
+ <img src="images/sql_join.png" width="50%" height="50%" /> 
 ---
 ### INE5426 - banco de dados II
 - [Tuning em banco de dados](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_II)
