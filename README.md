@@ -14,6 +14,7 @@
  - [SQL: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/exercicios)
 
  <img src="images/sql_join.png" width="50%" height="50%" /> 
+ 
 ---
 ### INE5426 - banco de dados II
 - [Tuning em banco de dados](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_II)
