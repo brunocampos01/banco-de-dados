@@ -1,74 +1,75 @@
--- delete from Traces..Alerta where Dt_Alerta = getdate()-1
-
 /*
-Instruções para realizar os testes.
-
-Colocar a execução da procedure EXEC [dbo].[stpAlerta_Queries_Demoradas] no JOB de Traces.
-Testar o alerta de lock sozinho
-Executar os outros testes
+STEPS:
+1. Colocar a execução da procedure EXEC [dbo].[stpAlerta_Queries_Demoradas] no JOB de Traces.
+2. Testar o alerta de lock sozinho
+3. Executar os outros testes
 */
 
-
 /*******************************************************************************************************************************
---	Cria a database de teste - Deve ser exclu�da no final do teste
+--	Create test database - Must is exclude in final test
 *******************************************************************************************************************************/
 USE [master]
 
-IF EXISTS (SELECT NULL FROM sys.databases WHERE NAME = 'brunocampos01')
-	DROP DATABASE [brunocampos01]
+IF EXISTS(SELECT NULL
+          FROM sys.databases
+          WHERE NAME = 'brunocampos01')
+    DROP DATABASE [brunocampos01]
 
 CREATE DATABASE [brunocampos01]
-
 ALTER DATABASE [brunocampos01] SET RECOVERY SIMPLE
 
 GO
 
 /*******************************************************************************************************************************
---	Processo Bloqueado
+--	Blocked Process
 *******************************************************************************************************************************/
 USE [brunocampos01]
 
--- Cria uma tabela de teste
-CREATE TABLE [dbo].[Teste_Lock] ([cod] INT)
-	
-INSERT INTO [dbo].[Teste_Lock] ([cod]) VALUES (6)
-	
--- Executar em outra conexao (Conexao 1)
-BEGIN TRAN
-UPDATE [dbo].[Teste_Lock]
-SET [cod] = [cod]
+-- Create table of test
+CREATE TABLE [dbo].[test_lock]
+(
+    [cod] INT
+)
 
--- COMMIT
-	
--- Executar em outra conexao (Conexao 2) - Ira ficar bloqueada!
+INSERT INTO [dbo].[test_lock] ([cod])
+VALUES (6)
+
+-- Execute in other connection
 BEGIN TRAN
-UPDATE [dbo].[Teste_Lock]
-SET [cod] = [cod]
-	
--- COMMIT
+    UPDATE [dbo].[test_lock]
+    SET [cod] = [cod]
+
+    -- COMMIT
+
+-- Executar em outra conexao (Conexao 2) - Ira ficar bloqueada!
+    BEGIN TRAN
+        UPDATE [dbo].[test_lock]
+        SET [cod] = [cod]
+
+        -- COMMIT
 
 -- Para conferir os Processos Bloqueados
-EXEC [dbo].[sp_WhoIsActive]
+        EXEC [dbo].[sp_WhoIsActive]
 
--- ALERTA
+        -- ALERTA
 -- Ap�s 2 minutos de Lock, executar a procedure abaixo para enviar o ALERTA
-EXEC [Traces].[dbo].[stpAlerta_Processo_Bloqueado]
+        EXEC [Traces].[dbo].[stpAlerta_Processo_Bloqueado]
 
--- CLEAR
+        -- CLEAR
 -- Executar o COMMIT nas Conexoes 1 e 2. Por fim, executar a procedure abaixo para enviar o CLEAR
-EXEC [Traces].[dbo].[stpAlerta_Processo_Bloqueado]
+        EXEC [Traces].[dbo].[stpAlerta_Processo_Bloqueado]
 
 -- Exclui a tabela de Teste
-DROP TABLE [dbo].[Teste_Lock]
+        DROP TABLE [dbo].[test_lock]
 
 GO
 
 /*******************************************************************************************************************************
---	Arquivo de Log Full
+--	Full Log File
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 1
 WHERE Nm_Alerta = 'Arquivo de Log Full'
@@ -85,7 +86,7 @@ EXEC [dbo].[stpAlerta_Arquivo_Log_Full]
 GO
 
 /*******************************************************************************************************************************
---	Espaco Disco
+--	Disc Space
 *******************************************************************************************************************************/
 USE [Traces]
 
@@ -106,11 +107,11 @@ EXEC [dbo].[stpAlerta_Espaco_Disco]
 GO
 
 /*******************************************************************************************************************************
---	Consumo CPU
+-- CPU
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 1
 WHERE Nm_Alerta = 'Consumo CPU'
@@ -127,30 +128,30 @@ EXEC [dbo].[stpAlerta_Consumo_CPU]
 GO
 
 /*******************************************************************************************************************************
---	MaxSize Arquivo SQL
+--	MaxSize File SQL
 *******************************************************************************************************************************/
 USE [master]
 
--- ALERTA
-ALTER DATABASE [brunocampos01] 
-MODIFY FILE ( NAME = N'brunocampos01', SIZE = 7144KB, MAXSIZE = 10240KB , FILEGROWTH = 10120KB )
+-- ALERT
+ALTER DATABASE [brunocampos01]
+    MODIFY FILE ( NAME = N'brunocampos01', SIZE = 7144 KB, MAXSIZE = 10240 KB , FILEGROWTH = 10120 KB )
 
 EXEC [Traces].[dbo].[stpAlerta_MaxSize_Arquivo_SQL]
-	
+
 -- CLEAR
-ALTER DATABASE [brunocampos01] 
-MODIFY FILE ( NAME = N'brunocampos01', FILEGROWTH = 216KB )
+ALTER DATABASE [brunocampos01]
+    MODIFY FILE ( NAME = N'brunocampos01', FILEGROWTH = 216 KB )
 
 EXEC [Traces].[dbo].[stpAlerta_MaxSize_Arquivo_SQL]
 
 GO
 
 /*******************************************************************************************************************************
---	Tamanho Arquivo MDF Tempdb
+--	File size MDF Tempdb
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 0
 WHERE Nm_Alerta = 'Tempdb Utilizacao Arquivo MDF'
@@ -167,11 +168,11 @@ EXEC [dbo].[stpAlerta_Tempdb_Utilizacao_Arquivo_MDF]
 GO
 
 /*******************************************************************************************************************************
---	Conexão SQL Server
+--	Connection SQL Server
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 2
 WHERE Nm_Alerta = 'Conexão SQL Server'
@@ -188,47 +189,45 @@ EXEC [dbo].[stpAlerta_Conexao_SQLServer]
 GO
 
 /*******************************************************************************************************************************
---	Status Database / Página Corrompida
+--	Status Database
 *******************************************************************************************************************************/
 USE [master]
 
--- ALERTA
+-- ALERT
 ALTER DATABASE [brunocampos01] SET OFFLINE
-
 EXEC [Traces].[dbo].[stpAlerta_Erro_Banco_Dados]
 
 -- CLEAR
 ALTER DATABASE [brunocampos01] SET ONLINE
-
 EXEC [Traces].[dbo].[stpAlerta_Erro_Banco_Dados]
 
 GO
 
 /*******************************************************************************************************************************
---	Queries Demoradas
+--	Queries Delayed
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 1
-WHERE Nm_Alerta = 'Queries Demoradas'
+WHERE Nm_Alerta = 'Queries Delayed'
 
 EXEC [dbo].[stpAlerta_Queries_Demoradas]
 
 -- Volta para o valor Default
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 100
-WHERE Nm_Alerta = 'Queries Demoradas'
+WHERE Nm_Alerta = 'Queries Delayed'
 
 GO
 
 /*******************************************************************************************************************************
---	Jobs Falharam
+--	Jobs Fails
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 48
 WHERE Nm_Alerta = 'Job Falha'
@@ -243,11 +242,11 @@ WHERE Nm_Alerta = 'Job Falha'
 GO
 
 /*******************************************************************************************************************************
---	SQL Server Reiniciado
+--	SQL Server Restart
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 500000
 WHERE Nm_Alerta = 'SQL Server Reiniciado'
@@ -262,66 +261,70 @@ WHERE Nm_Alerta = 'SQL Server Reiniciado'
 GO
 
 /*******************************************************************************************************************************
---	Database Criada
+--	Database Created
 *******************************************************************************************************************************/
 USE [Traces]
 
--- ALERTA
+-- ALERT
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 48
-WHERE Nm_Alerta = 'Database Criada'
+WHERE Nm_Alerta = 'Database Created'
 
 EXEC [dbo].[stpAlerta_Database_Criada]
 
 -- Volta para o valor Default
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 24
-WHERE Nm_Alerta = 'Database Criada'
+WHERE Nm_Alerta = 'Database Created'
 
 GO
 
 /*******************************************************************************************************************************
---	Database sem Backup
+--	Database without Backup
 *******************************************************************************************************************************/
 USE [Traces]
 
 -- ALERTA
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 0
-WHERE Nm_Alerta = 'Database sem Backup'
+WHERE Nm_Alerta = 'Database without Backup'
 
 EXEC [dbo].[stpAlerta_Database_Sem_Backup]
 
 -- Volta para o valor Default
 UPDATE [dbo].[Alerta_Parametro]
 SET [Vl_Parametro] = 24
-WHERE Nm_Alerta = 'Database sem Backup'
+WHERE Nm_Alerta = 'Database without Backup'
 
 GO
 
 /*******************************************************************************************************************************
---	Processos em Execução
+--	Processes
 *******************************************************************************************************************************/
 USE [Traces]
 
-EXEC [dbo].[stpEnvia_Email_Processos_Execucao]
+EXEC [dbo].[stpEnvia_Email_Processes_Execucao]
 
 GO
 
 /*******************************************************************************************************************************
---	Alertas de Severidade
+--	Severity Alerts
 *******************************************************************************************************************************/
-RAISERROR ('Teste Erro de Severidade', 21, 1) WITH LOG
+RAISERROR ('Test Severity Alerts', 21, 1) WITH LOG
 
 GO
 
 /*******************************************************************************************************************************
---	Confere o Resultado dos Testes dos Alertas
+--	Checks the Alerts Test Result
 *******************************************************************************************************************************/
 USE [Traces]
 
-SELECT * FROM [dbo].[Alerta_Parametro] ORDER BY [Id_Alerta_Parametro]
+SELECT *
+FROM [dbo].[Alerta_Parametro]
+ORDER BY [Id_Alerta_Parametro]
 
-SELECT * FROM [dbo].[Alerta] ORDER BY [Dt_Alerta] DESC
+SELECT *
+FROM [dbo].[Alerta]
+ORDER BY [Dt_Alerta] DESC
 
 DROP DATABASE [brunocampos01]
