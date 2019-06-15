@@ -1,5 +1,7 @@
 # Banco de Dados 
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9dc6dde38de14dcf9a1625cc0d3fc7d4)](https://app.codacy.com/app/brunocampos01/banco-de-dados?utm_source=github.com&utm_medium=referral&utm_content=brunocampos01/banco-de-dados&utm_campaign=Badge_Grade_Dashboard)
+
 <img src="images/image_bd.png" width="10%" height="10%" align="center" valign="center"/> 
 
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
