@@ -36,7 +36,7 @@
  
 ---
 
-## **Noções Básicas** 
+## Noções Básicas 
 ### Linguagens SQL
 - **DDL** (Linguagem de Definição de Dados), que lida com esquemas e descrições de banco de dados.
 - **DML** (Linguagem de Manipulação de Dados), que lida com a manipulação de dados e inclui instruções SQL mais comuns, como SELECT, INSERT, UPDATE, DELETE etc.
