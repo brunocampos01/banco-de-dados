@@ -21,11 +21,6 @@
 - Aplicações real time. Ex: games online
 - Aplicações Big Data Analytics. Ex: stock market para analisar tendencias de preços.
 
-## Diferente de Data WareHouse:
-- São OLTPs
-- Há atualizações
-- Analisam dados em larga escala em real time.
-
 ## Características:
 - Particionamento
 - Controle de concorrência (scheduler)
