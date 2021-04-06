@@ -36,7 +36,7 @@
  
 ---
 
-## Noções Básicas 
+## **Noções Básicas** 
 ### Linguagens SQL
 - **DDL** (Linguagem de Definição de Dados), que lida com esquemas e descrições de banco de dados.
 - **DML** (Linguagem de Manipulação de Dados), que lida com a manipulação de dados e inclui instruções SQL mais comuns, como SELECT, INSERT, UPDATE, DELETE etc.
@@ -47,12 +47,12 @@
 
 
 ### SQL Joins
-<img src="images/sql_join.png" width="60%" height="50%" align="center" valign="center"/> 
+<img src="images/sql_join.png" width="80%" height="80%" align="center" valign="center"/> 
 
 <br/>
 <br/>
 
-### Bancos de Dados Distribuido
+## **Bancos de Dados Distribuidos**
 #### Transações
 É qualquer execução única de um programa usuário que exerce uma série de operações.
 
@@ -87,7 +87,7 @@ Controle de transações serve para garantir as caracteristicas fundamentais de 
 - tempo de processamento
 - transmissão pela rede
 
-#### Fragmentação de dados
+#### Fragmentação de Dados
 Um dado ou relação será fragmentado e armazenado em diferentes nodos.<br>
 A fragmentação pode ser de 2 formas:
 - Horizontal: os fragmentos são definidos por SELEÇÃO
