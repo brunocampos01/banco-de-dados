@@ -7,41 +7,98 @@
 ![License](https://img.shields.io/badge/SQL-learning-green.svg)
 ![License](https://img.shields.io/badge/UFSC-Banco%20de%20Dados-green.svg)
 
-### INE5613 - banco de dados I
- - [Modelagem](https://github.com/brunocampos01/banco-de-dados/tree/master/modelagem)
- - [Normalização](https://github.com/brunocampos01/banco-de-dados/tree/master/normalizacao)
- - [Álgebra e cálculo relacional](https://github.com/brunocampos01/banco-de-dados/tree/master/algebra_e_calculo)
- - [SQL: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/aulas)
- - [SQL: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/sql/exercicios)
+### INE5613 - Banco de Dados I
+ - [Modelagem](modelagem)
+ - [Normalização](normalizacao)
+ - [Álgebra e cálculo relacional](algebra_e_calculo)
+ - [SQL: aulas](sql/aulas)
+ - [SQL: exercícios](sql/exercicios)
  
 ---
 
-### INE5426 - banco de dados II
-- [Tuning em banco de dados](https://github.com/brunocampos01/banco-de-dados/tree/master/bd_II)
-- [Seminario sobre a rede Tangle (blockchain 3.0)](https://github.com/brunocampos01/banco-de-dados/blob/master/bd_II/exercicios/seminario_rede_tangle.pptx)
+### INE5426 - Banco de Dados II
+- [Tuning em banco de dados](bd_II)
+- [Seminário sobre a rede Tangle (blockchain 3.0)](bd_II/exercicios/seminario_rede_tangle.pptx)
 
 ---
 
-### INE5600 - banco de dados III
- - [Banco de dados orientado à objetos: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_orientado_a_objetos)
- - [Banco de dados orientado à objetos: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bdoo)
- - [Bancos de Dados Temporais: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_temporais)
- - [Bancos de Dados Temporais: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bdt)
- - [Bancos de Dados Geográficos: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_geograficos)
- - [Bancos de Dados Geográficos: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bdgeograficos)
- - [Bancos de Dados XML: aulas](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/aulas/bd_xml)
- - [Bancos de Dados XML: exercícios](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_SQL/exercicios/exercicios_bd_xml)
- - [Not only (NoSQL)](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_noSQL)
- - [New SQL](https://github.com/brunocampos01/banco-de-dados/tree/master/banco_de_dados_newSQL)
- ---
+### INE5600 - Banco de Dados III
+ - [Banco de dados orientado à objetos: aulas](bd_III/banco_de_dados_SQL/aulas/bd_orientado_a_objetos)
+ - [Banco de dados orientado à objetos: exercícios](bd_III/banco_de_dados_SQL/exercicios/exercicios_bdoo)
+ - [Bancos de Dados Temporais: aulas](bd_III/banco_de_dados_SQL/aulas/bd_temporais)
+ - [Bancos de Dados Temporais: exercícios](bd_III/banco_de_dados_SQL/exercicios/exercicios_bdt)
+ - [Bancos de Dados Geográficos: aulas](bd_III//banco_de_dados_SQL/aulas/bd_geograficos)
+ - [Bancos de Dados Geográficos: exercícios](bd_III//banco_de_dados_SQL/exercicios/exercicios_bdgeograficos)
+ - [Bancos de Dados XML: aulas](bd_III//banco_de_dados_SQL/aulas/bd_xml)
+ - [Bancos de Dados XML: exercícios](bd_III//banco_de_dados_SQL/exercicios/exercicios_bd_xml)
+ - [Not only (NoSQL)](bd_III//banco_de_dados_noSQL)
+ - [New SQL](bd_III//banco_de_dados_newSQL)
  
- ### Bizus
- - Cheat Sheet: https://gist.github.com/janikvonrotz/6e27788f662fcdbba3fb
- 
- ### Livros de referência: 
-  - [Sistemas de Banco de Dados - Elmasri e Navathe - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Banco%20de%20Dados%20navathe%206%C2%AA%20Edicao.pdf)
-   - [Sistemas de Gerenciamento de Banco de Dados - Ramakrishnan e Gehrke - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Gerenciamento%20de%20Banco%20de%20Dados%20-%203%C2%AA%20Ed.pdf)
-   - [Use a cabeca - SQL](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Use%20a%20Cabeca%20-%20SQL.pdf)
+---
+
+## Noções Básicas 
+### Linguagens SQL
+- **DDL** (Linguagem de Definição de Dados), que lida com esquemas e descrições de banco de dados.
+- **DML** (Linguagem de Manipulação de Dados), que lida com a manipulação de dados e inclui instruções SQL mais comuns, como SELECT, INSERT, UPDATE, DELETE etc.
+- **DCL** (Linguagem de Controle de Dados), que inclui comandos como GRANT, e principalmente relacionado com direitos, permissões e outros controles do sistema de banco de dados.
+
+### Tipos de Dados
+- [Cheat Sheet](https://gist.github.com/janikvonrotz/6e27788f662fcdbba3fb#datatypes)
+
+
+### SQL Joins
+<img src="images/sql_join.png" width="60%" height="50%" align="center" valign="center"/> 
+
+<br/>
+<br/>
+
+### Bancos de Dados Distribuido
+#### Transações
+É qualquer execução única de um programa usuário que exerce uma série de operações.
+
+#### Propriedades
+Todo banco de dados RELACIONAL deve possuir as propriedades ACID:
+- ATOMICIDADE: todas as operações de uma transação são realizadas.
+- CONSISTENCIA: leva o DB de um estado consistente para outro estado consistente.
+- INDEPENDENCIA: o processamento de transações não deve interferir em outras transações.
+- DURABILIDADE: resultados de operações confirmadas não devem interferir em outras transações.
+
+#### Controle de transações
+Controle de transações serve para garantir as caracteristicas fundamentais de uma transação (ACID).
+
+#### Escalonamento de transações
+- com lock
+- otimista
+
+#### Protocolo 2phase commit
+- Preparação: um dos participantes é eleito coordenador e envia a cada nodo uma solicitação para preparar para o commit.
+- Commit: se todos os nodos participantes estão prontos, o coordenador envia um sinal de commit para cada participante e depois executa
+  - Se um nodo falhar na preparação do coomit, o coordenador manda um sinal de rollback para todos.
+  - Se o nodo coordenador cair: haverá um backup que será eleito. Em seguida por broadcast, os outros nodos são avisados da mundança.
+
+#### Deadlocks
+...
+
+### Otimização de Consultas
+É sempre necessário levar em conta:
+- replicação dos dados
+- reconstrução das relações a partir de fragmentos
+- tempo de recuperação
+- tempo de processamento
+- transmissão pela rede
+
+#### Fragmentação de dados
+Um dado ou relação será fragmentado e armazenado em diferentes nodos.<br>
+A fragmentação pode ser de 2 formas:
+- Horizontal: os fragmentos são definidos por SELEÇÃO
+- Vertical: os fragmentos são definidos por PROJEÇÃO
+
+---
+
+### Livros de Referência
+- [Sistemas de Banco de Dados - Elmasri e Navathe - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Banco%20de%20Dados%20navathe%206%C2%AA%20Edicao.pdf)
+- [Sistemas de Gerenciamento de Banco de Dados - Ramakrishnan e Gehrke - 6ª Edicao](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Sistemas%20de%20Gerenciamento%20de%20Banco%20de%20Dados%20-%203%C2%AA%20Ed.pdf)
+- [Use a cabeca - SQL](https://github.com/brunocampos01/banco-de-dados/blob/master/livros/Use%20a%20Cabeca%20-%20SQL.pdf)
 
 ---
 
