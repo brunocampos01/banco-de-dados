@@ -79,6 +79,8 @@ Controle de transações serve para garantir as caracteristicas fundamentais de 
 #### Deadlocks
 ...
 
+---
+
 ### Otimização de Consultas
 É sempre necessário levar em conta:
 - replicação dos dados
