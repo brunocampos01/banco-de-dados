@@ -50,7 +50,8 @@
 <img src="images/sql_join.png" width="80%" height="80%" align="center" valign="center"/> 
 
 <br/>
-<br/>
+
+---
 
 ## **Bancos de Dados Distribuidos**
 #### Transações
