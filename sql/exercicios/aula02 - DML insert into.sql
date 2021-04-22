@@ -15,7 +15,7 @@ VALUES (4, 2, 25);
 INSERT INTO ambulatorios
 VALUES (5, 2, 55);
 
-SELECT* FROM ambulatorios;
+SELECT * FROM ambulatorios;
 
 --medicos
 INSERT INTO medicos
@@ -33,7 +33,7 @@ VALUES (4, 'carlos', 28, 'ortopedia', 10000100003, 'joinville');
 INSERT INTO medicos
 VALUES (5, 'marcia', 33, 'neurologia', 10000100004, 'biguacu', 3);
 
-SELECT* FROM medicos;
+SELECT * FROM medicos;
 
 -- pacientes
 INSERT INTO pacientes
@@ -48,7 +48,7 @@ VALUES (3, 'lucia', 30, 'biguacu', 12345678912, 'tendinite');
 INSERT INTO pacientes
 VALUES (4, 'carlos', 28, 'joinville', 12345678913, 'sarampo');
 
-SELECT* FROM pacientes;
+SELECT * FROM pacientes;
 
 --funcionarios
 INSERT INTO funcionarios (codf, nome, idade, cidade, salario, cpf)
@@ -66,7 +66,7 @@ VALUES (4, 'carlos', 44, 'florianopolis', 1200, 12345678923);
 INSERT INTO funcionarios (codf, nome, idade, cidade, salario, cpf)
 VALUES (5, 'paula', 33, 'florianopolis', 2500, 12345678924);
 
-SELECT* FROM funcionarios;
+SELECT * FROM funcionarios;
 
 --consultas
 INSERT INTO consultas
@@ -96,5 +96,4 @@ VALUES (3, 4, '19/10/2016', '1300');
 INSERT INTO consultas
 VALUES (4, 4, '22/10/2016', '1930');
 
-SELECT* FROM consultas;
-
+SELECT * FROM consultas;
