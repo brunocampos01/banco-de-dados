@@ -36,12 +36,6 @@
  
 ---
 
-
-
-https://medium.com/data-hackers/acid-em-banco-de-dados-transacionais-37e2ba2dbd53
-
-
-
 ## Noções Básicas 
 ### Linguagens SQL
 - **DDL** (Linguagem de Definição de Dados), que lida com esquemas e descrições de banco de dados.
