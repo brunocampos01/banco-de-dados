@@ -71,7 +71,7 @@ UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
 
 <img src="images/commit.png" width="80%" height="80%" align="center" valign="center"/> 
 
-<img src="images/sql_join.png" width="80%" height="80%" align="center" valign="center"/> 
+<img src="images/rollback.png" width="80%" height="80%" align="center" valign="center"/> 
 
 <br/>
 
