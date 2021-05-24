@@ -75,7 +75,7 @@ UPDATE ACCOUNT SET BALANCE = BALANCE - 100 WHERE ID = 1
 UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
 ```
 
-<img src="images/sql_join.png" width="80%" height="80%" align="center" valign="center"/> 
+<img src="images/commit.png" width="80%" height="80%" align="center" valign="center"/> 
 
 <img src="images/sql_join.png" width="80%" height="80%" align="center" valign="center"/> 
 
@@ -90,10 +90,6 @@ Todo banco de dados RELACIONAL deve possuir as propriedades ACID:
 
 ### Controle de transações
 Controle de transações serve para garantir as caracteristicas fundamentais de uma transação (ACID).
-
-#### Escalonamento de transações
-- com lock
-- otimista
 
 #### Protocolo 2phase commit
 - Preparação: um dos participantes é eleito coordenador e envia a cada nodo uma solicitação para preparar para o commit.
