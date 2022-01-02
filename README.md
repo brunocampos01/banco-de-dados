@@ -83,9 +83,9 @@ UPDATE ACCOUNT SET BALANCE = BALANCE - 100 WHERE ID = 1
 UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
 ```
 
-<img src="images/commit.png" width="80%" height="70%" align="center" valign="center"/> 
+<img src="images/commit.png" width="50%" height="70%" align="center" valign="center"/> 
 
-<img src="images/rollback.png" width="80%" height="70%" align="center" valign="center"/> 
+<img src="images/rollback.png" width="50%" height="70%" align="center" valign="center"/> 
 
 <br/>
 
