@@ -1,91 +1,151 @@
-/*﻿EXERCÍCIOS
-● Crie um BD com nome Clinica
-● Crie as seguintes tabelas neste BD, considerando que os atributos
-sublinhados são chaves primárias e os em itálico são chaves estrangeiras:
-– Ambulatorios: nroa (int), andar (numeric(3)) (não nulo), capacidade (smallint)
-– Medicos: codm (int), nome (varchar(40)) (não nulo), idade (smallint) (não nulo),
-especialidade (char(20)), CPF (numeric(11)) (único), cidade (varchar(30)), nroa (int)
-– Pacientes: codp (int), nome (varchar(40)) (não nulo), idade (smallint) (não nulo),
-cidade (char(30)), CPF (numeric(11)) (único), doenca (varchar(40)) (não nulo)
-– Funcionarios: codf (int), nome (varchar(40)) (não nulo), idade (smallint), CPF
-(numeric(11)) (único), cidade (varchar(30)), salario (numeric(10)), cargo (varchar(20))
-– Consultas: codm (int), codp (int), data (date), hora (time)
-
-● Crie a coluna nroa (int) na tabela Funcionarios
-● Crie os seguintes índices:
-– Medicos: CPF (único), nroa
-– Pacientes: doenca
-● Remover o índice doenca em Pacientes
-● Remover as colunas cargo e nroa da tabela de Funcionarios */
-
+/* 
+EXERCICIOS
 -- SQL: aula 01 
 -- CREATE, ADD COLUMN, DROP COLUMN, DROP INDEX, ALTER, INDEX
-
+*/
+-- Crie um BD com nome clinica
 CREATE DATABASE clinica;
 
+
+/* ---------------------------------------------------------------------------
+2. Crie as seguintes tabelas neste BD, 
+
+- Considere que os atributos em negrito são chaves primárias (PK)
+e os em itálico são chaves estrangeiras (FK)
+- O campo cpf não será utilizado em cálculos
+*/
+
+/*
+- **ambulatorios** 
+  - **nroa (int)**
+  - andar (numeric(3)) (não nulo)
+  - capacidade (smallint)
+*/
 CREATE TABLE ambulatorios(
 	nroa INT PRIMARY KEY,
-	andar NUMERIC (3) NOT NULL,
+	andar NUMERIC(3) NOT NULL,
 	capacidade SMALLINT
 );
 SELECT * FROM ambulatorios;
 /*OBS: a forma recomendada de se criar PK, FK, NOT NULL, CHECK, UNIQUE eh com contraint (aula 06)*/
 
-DROP TABLE medicos;
+/*
+- **medicos**
+  - **cod_m (int)**
+  - nome (varchar(40)) (não nulo)
+  - idade (smallint) (não nulo)
+  - especialidade (char(20))
+  - CPF (varchar(11)) (único)
+  - cidade (varchar(30))
+  - _nroa (int)_
+*/
 CREATE TABLE medicos(
-	codm INTEGER PRIMARY KEY,
-	nome VARCHAR (40) NOT NULL,
+	cod_m INTEGER PRIMARY KEY,
+	nome VARCHAR(40) NOT NULL,
 	idade SMALLINT NOT NULL,
-	especialidade CHAR (20),
-	cpf NUMERIC (11) UNIQUE,
-	cidade VARCHAR (30),
+	especialidade CHAR(20),
+	cpf VARCHAR(11) UNIQUE,
+	cidade VARCHAR(30),
 	nroa INT,
-	FOREIGN KEY (nroa) REFERENCES ambulatorios (nroa) -- se usar foreign key tem que ter a coluna nas 2 tabelas !
-	--CONSTRAINT fk_ambulatorio_nroa FOREIGN KEY (nroa) REFERENCES ambulatorios
+	FOREIGN KEY (nroa) REFERENCES ambulatorios (nroa) -- se usar foreign key tem que ter a coluna nas 2 tabelas!
 );
 SELECT * FROM medicos;
 
+
+/*
+**NOTE: aula 02**
+Para evitar referências à tabelas ainda não criadas
+pode ser criada todas as tabelas sem chaves estrangeiras (FK)
+e depois inserir a `CONSTRAINT` de FK com `ALTER TABLE`:
+
+```sql
+ALTER TABLE nomeTabela 
+  ADD CONSTRAINT nome    
+  	FOREIGN KEY (nomeColunaChaveEstrangeira)    
+	REFERENCES tabela (nomeColunaChavePrimaria);
+```
+*/
+
+
+/*
+- **pacientes**
+  - **cod_p (int)**
+  - nome (varchar(40)) (não nulo)
+  - idade (smallint) (não nulo)
+  - cidade (char(30))
+  - CPF (varchar(11)) (único)
+  - doenca (varchar(40)) (não nulo)
+*/
 CREATE TABLE pacientes(
-	codp INT PRIMARY KEY,
-	nome VARCHAR (40) NOT NULL,
+	cod_p INT PRIMARY KEY,
+	nome VARCHAR(40) NOT NULL,
 	idade SMALLINT NOT NULL,
-	cidade CHAR (30),
-	cpf NUMERIC (11) UNIQUE,
-	doenca VARCHAR (40) NOT NULL
+	cidade CHAR(30),
+	cpf VARCHAR(11) UNIQUE,
+	doenca VARCHAR(40) NOT NULL
 );
 SELECT * FROM pacientes;
 
+/*
+- **funcionarios**
+  - **cod_f (int)**
+  - nome (varchar(40)) (não nulo)
+  - idade (smallint)
+  - CPF (varchar(11)) (único)
+  - cidade (varchar(30))
+  - salario (numeric(10))
+  - cargo (varchar(20))
+*/
 CREATE TABLE funcionarios(
-	codf INT PRIMARY KEY,
+	cod_f INT PRIMARY KEY,
 	nome VARCHAR(40) NOT NULL,
 	idade SMALLINT,
-	cpf NUMERIC (11) UNIQUE,
-	cidade VARCHAR (30),
-	salario NUMERIC (10),
-	cargo VARCHAR (20)
+	cpf VARCHAR(11) UNIQUE,
+	cidade VARCHAR(30),
+	salario NUMERIC(10),
+	cargo VARCHAR(20)
 );
 SELECT * FROM funcionarios;
 
+/*
+- **consultas**
+  - *cod_c (int)*
+  - *cod_m (int)*
+  - *cod_p (int)*
+  - data (date) (não nulo)
+  - hora (time) (não nulo)
+*/
 CREATE TABLE consultas(
-	codm INT,
-	codp INT,
-	FOREIGN KEY (codm) REFERENCES medicos (codm),
-	FOREIGN KEY (codp) REFERENCES pacientes (codp),
-	data DATE,
-	hora TIME
+  	cod_c     INT PRIMARY KEY,
+	cod_m     INT,
+	cod_p     INT,
+	data      DATE NOT NULL,
+	hora      TIME NOT NULL,
+  	FOREIGN KEY (cod_m) REFERENCES medicos (cod_m),
+	FOREIGN KEY (cod_p) REFERENCES pacientes (cod_p)
 );
 SELECT * FROM consultas;
 
-ALTER TABLE funcionarios
-	ADD COLUMN nroa INT;
 
-CREATE UNIQUE INDEX cpf ON medicos(cpf);
-CREATE UNIQUE INDEX nroa ON medicos (nroa);
-CREATE UNIQUE INDEX doenca ON pacientes (doenca);
+/* ---------------------------------------------------------------------------
+## **3. Crie os seguintes índices**
+- Medicos: nroa
+- Pacientes: doenca
+*/
+CREATE UNIQUE INDEX nroa ON medicos(nroa);
+CREATE UNIQUE INDEX doenca ON pacientes(doenca);
 
+
+/* ---------------------------------------------------------------------------
+## **4. Remova o índice doenca em Pacientes**
+*/
 ALTER TABLE pacientes
 	DROP INDEX doenca;
 
+
+/* ---------------------------------------------------------------------------
+## **5. Remova a coluna `cargo` da tabela de `funcionarios`**
+*/
 ALTER TABLE funcionarios
 	DROP COLUMN cargo,
 	DROP COLUMN nroa;

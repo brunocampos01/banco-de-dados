@@ -1,40 +1,40 @@
-CREATE TABLE TiposVeiculos (
-	codTipo 	smallint 	UNIQUE, 	
-	descricao 	varchar(30) 	NOT NULL,	
-	CONSTRAINT PK_TiposVeiculos 	PRIMARY KEY	(codTipo)
+CREATE TABLE TiposVeiculos(
+	codTipo		smallint 			UNIQUE, 	
+	descricao	varchar(30) 		NOT NULL,	
+	CONSTRAINT 	PK_TiposVeiculos 	PRIMARY KEY	(codTipo)
 );
 
 CREATE TABLE Habilitacoes(
-	codH		smallint 	UNIQUE,		
+	codH		smallint 		UNIQUE,		
 	tipo		varchar(300) 	NOT NULL,
 	idade_min 	NUMERIC(2,0)	NOT NULL,
 	descricao	varchar(500) 	NOT NULL,
-	CONSTRAINT PK_Habilitacoes	PRIMARY KEY 	(codH)
+	CONSTRAINT 	PK_Habilitacoes	PRIMARY KEY 	(codH)
 );
 
-CREATE TABLE Veiculos (
-	matricula	smallint 	UNIQUE,
+CREATE TABLE Veiculos(
+	matricula	smallint 		UNIQUE,
 	nome		varchar(300)	NOT NULL,
 	modelo		varchar(300)	NOT NULL,
 	comprimento	NUMERIC(5,2) 	NOT NULL,	
 	potMotor	NUMERIC(5,1)	NOT NULL,
 	vlDiaria	NUMERIC(7,2)	NOT NULL,	
-	codTipo 	SMALLint	NOT NULL,
-	CONSTRAINT PK_Veiculos	PRIMARY KEY 	(matricula),
-	CONSTRAINT FK_Veiculos 	FOREIGN KEY 	(codTipo) 	REFERENCES 	TiposVeiculos
+	codTipo 	SMALLint		NOT NULL,
+	CONSTRAINT PK_Veiculos		PRIMARY KEY 	(matricula),
+	CONSTRAINT FK_Veiculos 		FOREIGN KEY		(codTipo) 	REFERENCES 	TiposVeiculos
 );
 
-CREATE TABLE Funcionarios (
-	codF		smallint	UNIQUE,
+CREATE TABLE Funcionarios(
+	codF		smallint		UNIQUE,
 	nome		varchar(300)	NOT NULL,
 	telefone	numeric(11,0),	
-	endereco	varchar(40)	NOT NULL,
+	endereco	varchar(40)		NOT NULL,
 	idade		NUMERIC(2,0)	NOT NULL,
 	salario		NUMERIC(7,2)	NOT NULL,
-	CONSTRAINT PK_Funcionarios	PRIMARY KEY 	(codF)
+	CONSTRAINT 	PK_Funcionarios	PRIMARY KEY 	(codF)
 );
 
-CREATE TABLE VeiculosHabilitacoes (
+CREATE TABLE VeiculosHabilitacoes(
 	codTipo		smallint,
 	codH		smallint,
 	CONSTRAINT PK_VeiculosHabilitacoes 	PRIMARY KEY (codTipo,codH),
@@ -42,32 +42,32 @@ CREATE TABLE VeiculosHabilitacoes (
 	CONSTRAINT FK_VH_habilitacoes 		FOREIGN KEY (codH) REFERENCES Habilitacoes(codH)
 );
 
-CREATE TABLE Clientes (
-	CPF		numeric(11,0)	UNIQUE,  
-	nome		varchar(300) 	NOT NULL,
-	endereco	varchar(300) 	NOT NULL,
+CREATE TABLE Clientes(
+	CPF				numeric(11,0)	UNIQUE,  
+	nome			varchar(300) 	NOT NULL,
+	endereco		varchar(300) 	NOT NULL,
 	estado_civil	varchar(20),
-	num_filhos	smallint,
-	data_nasc	date 		NOT NULL,	
-	telefone	numeric(11,0) 	NOT NULL,	
-	codH		smallint		NOT NULL,	
-	CONSTRAINT PK_Clientes	PRIMARY KEY (CPF),
-	CONSTRAINT FK_Clientes 	FOREIGN KEY (codH) REFERENCES Habilitacoes
+	num_filhos		smallint,
+	data_nasc		date 			NOT NULL,	
+	telefone		numeric(11,0) 	NOT NULL,	
+	codH			smallint		NOT NULL,	
+	CONSTRAINT 		PK_Clientes		PRIMARY KEY (CPF),
+	CONSTRAINT 		FK_Clientes 	FOREIGN KEY (codH) REFERENCES Habilitacoes
 );
 
-CREATE TABLE Locacoes (
-	codLoc		smallint	UNIQUE,
-	valor		numeric(9,2)	NOT NULL,		
-	inicio		date		NOT NULL,
-	fim		date	CHECK(fim>inicio),   		
-	obs		varchar(30),
-	matricula	smallint	NOT NULL,
-	codF		smallint	NOT NULL,
-	CPF		numeric(11)	NOT NULL ,
-	CONSTRAINT PK_Locacoes	PRIMARY KEY	(codLoc),
-	CONSTRAINT FK_Locacoes_matricula	FOREIGN KEY (matricula) REFERENCES Veiculos,
-	CONSTRAINT FK_Locacoes_codf	FOREIGN KEY (codF) REFERENCES Funcionarios,
-	CONSTRAINT FK_Locacoes_cpf	FOREIGN KEY (CPF) REFERENCES Clientes
+CREATE TABLE Locacoes(
+	codLoc		smallint				UNIQUE,
+	valor		numeric(9,2)			NOT NULL,		
+	inicio		date					NOT NULL,
+	fim			date					CHECK(fim > inicio),   		
+	obs			varchar(30),
+	matricula	smallint				NOT NULL,
+	codF		smallint				NOT NULL,
+	CPF			numeric(11)				NOT NULL ,
+	CONSTRAINT 	PK_Locacoes				PRIMARY KEY	(codLoc),
+	CONSTRAINT 	FK_Locacoes_matricula	FOREIGN KEY (matricula) REFERENCES Veiculos,
+	CONSTRAINT 	FK_Locacoes_codf		FOREIGN KEY (codF) REFERENCES Funcionarios,
+	CONSTRAINT 	FK_Locacoes_cpf			FOREIGN KEY (CPF) REFERENCES Clientes
 );
 
 
