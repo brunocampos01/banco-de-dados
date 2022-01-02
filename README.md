@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/badge/SQL-learning-green.svg)
 ![License](https://img.shields.io/badge/UFSC-Banco%20de%20Dados-green.svg)
 
-### Fundamentos de Banco de Dados
+### **Fundamentos de Banco de Dados**
 - [Modelagem](modelagem)
 - [Normalização](normalizacao)
 - [Álgebra e cálculo relacional](algebra_e_calculo)
@@ -35,6 +35,8 @@
  - [New SQL](bd_III//banco_de_dados_newSQL)
  
 ---
+
+<br/>
 
 ## **Noções Básicas** 
 
@@ -81,9 +83,9 @@ UPDATE ACCOUNT SET BALANCE = BALANCE - 100 WHERE ID = 1
 UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
 ```
 
-<img src="images/commit.png" width="80%" height="80%" align="center" valign="center"/> 
+<img src="images/commit.png" width="80%" height="70%" align="center" valign="center"/> 
 
-<img src="images/rollback.png" width="80%" height="80%" align="center" valign="center"/> 
+<img src="images/rollback.png" width="80%" height="70%" align="center" valign="center"/> 
 
 <br/>
 
