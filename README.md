@@ -63,68 +63,65 @@
   <br/>
 </details>
 
----
-
-<br/>
-
-### **Transações**
-Transação em banco de dados é uma coleção de várias operações ex: `SELECT`, `UPDATE`, `DELETE` ou `INSERT` como uma **única unidade de trabalho**.
-<br/>
-Podemos definir onde a transação começará e quando terminará. Para iniciar a transação, usamos a sintaxe `BEGIN`.
-<br/>
-Se as consultas em uma transação foram executadas com sucesso, salvamos as alterações usando a sintaxe `COMMIT`. Se as consultas em uma transação falharem na execução, então reverteremos as alterações antes da execução da transação usando a sintaxe `ROLLBACK`.
-
-<img src="images/transaction.jpeg" width="80%" height="80%" align="center" valign="center"/> 
-
-Ex:
-```sql
-SELECT BALANCE FROM ACCOUNT WHERE ID = 1
-UPDATE ACCOUNT SET BALANCE = BALANCE - 100 WHERE ID = 1
-UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
-```
-
-<img src="images/commit.png" width="50%" height="70%" align="center" valign="center"/> 
-
-<img src="images/rollback.png" width="50%" height="70%" align="center" valign="center"/> 
-
-<br/>
-
 <details>	
-  <summary><a> Propriedades das Trasações</a></summary>
+  <summary><a> Transações</a></summary>
+
+  Transação em banco de dados é uma coleção de várias operações ex: `SELECT`, `UPDATE`, `DELETE` ou `INSERT` como uma **única unidade de trabalho**.
+  <br/>
+  Podemos definir onde a transação começará e quando terminará. Para iniciar a transação, usamos a sintaxe `BEGIN`.
+  <br/>
+  Se as consultas em uma transação foram executadas com sucesso, salvamos as alterações usando a sintaxe `COMMIT`. Se as consultas em uma transação falharem na execução, então reverteremos as alterações antes da execução da transação usando a sintaxe `ROLLBACK`.
   
+  <img src="images/transaction.jpeg" width="80%" height="80%" align="center" valign="center"/> 
+  
+  Ex:
+  ```sql
+  SELECT BALANCE FROM ACCOUNT WHERE ID = 1
+  UPDATE ACCOUNT SET BALANCE = BALANCE - 100 WHERE ID = 1
+  UPDATE ACCOUNT SET BALANCE = BALANCE + 100 WHERE ID = 2
+  ```
+  
+  <img src="images/commit.png" width="50%" height="70%" align="center" valign="center"/> 
+  
+  <img src="images/rollback.png" width="50%" height="70%" align="center" valign="center"/> 
+  
+  <br/>
+  
+  <details>	
+  <summary><a> Propriedades das Trasações</a></summary>
+    
   Todo banco de dados RELACIONAL deve possuir as propriedades ACID:
   - **ATOMICIDADE**: todas as operações de uma transação são realizadas. Isso significa que em caso de sucesso deve ser executada totalmente e em casos de erros ou falhas deve ser abortada por completo.
   - **CONSISTENCIA**: leva o DB de um estado consistente para outro estado consistente.
   - **INDEPENDENCIA**: o processamento de transações não deve interferir em outras transações.
   - **DURABILIDADE**: resultados de operações confirmadas não devem interferir em outras transações.
   <br/>
-</details>
-
-<details>	
+  </details>
+  
+  <details>	
   <summary><a> Controle de transações</a></summary>
-  
+    
   Controle de transações serve para garantir as caracteristicas fundamentais de uma transação (ACID).
-  
   <br/>
-</details>
-
-
-<details>	
-  <summary><a> Protocolo 2phase commit</a></summary>
+  </details>
   
+  
+  <details>	
+  <summary><a> Protocolo 2phase commit</a></summary>
+    
   - Preparação: um dos participantes é eleito coordenador e envia a cada nodo uma solicitação para preparar para o commit.
   - Commit: se todos os nodos participantes estão prontos, o coordenador envia um sinal de commit para cada participante e depois executa
     - Se um nodo falhar na preparação do coomit, o coordenador manda um sinal de rollback para todos.
     - Se o nodo coordenador cair: haverá um backup que será eleito. Em seguida por broadcast, os outros nodos são avisados da mundança.
+  <br/>
+  </details>
   
   <br/>
 </details>
 
----
 
-<br/>
-
-### **Deadlocks**
+<details>	
+  <summary><a> Deadlocks</a></summary>
 Lock é quando uma ação está sendo tomada em um banco de dados e para evitar a concorrência de 2 comandos em cima do mesmo registro ou tabela, um lock (travamento) é executado. Quando um lock é ativo a transação por sua vez aguarda o unlock (destravamento) da tarefa que estava a sua frente para assim poder ser executada. 
 <br/>
 Já o DeadLock, é um caso que ocorre nos bancos de dados quando são feitos muitos lock’s que dependem de outros lock’s para prosseguirem, causando uma fila eterna de bloqueio.
@@ -135,23 +132,28 @@ Já o DeadLock, é um caso que ocorre nos bancos de dados quando são feitos mui
 
 Isso causa um ciclo de dependências (dependência cíclica) e assim impedindo que qualquer tarefa possa ser executada. Geralmente em casos assim, os SGBD’s cancelam ambas as transações para que as próximas possam ser realizadas.
 
----
+  <br/>
+</details>
 
-<br/>
 
-### **Otimização de Consultas**
-É sempre necessário levar em conta:
-- replicação dos dados
-- reconstrução das relações a partir de fragmentos
-- tempo de recuperação
-- tempo de processamento
-- transmissão pela rede
+<details>	
+  <summary><a> Otimização de Consultas</a></summary>
+  É sempre necessário levar em conta:
+  - replicação dos dados
+  - reconstrução das relações a partir de fragmentos
+  - tempo de recuperação
+  - tempo de processamento
+  - transmissão pela rede
+  
+  #### Fragmentação de Dados
+  Um dado ou relação será fragmentado e armazenado em diferentes nodos.<br>
+  A fragmentação pode ser de 2 formas:
+  - Horizontal: os fragmentos são definidos por SELEÇÃO
+  - Vertical: os fragmentos são definidos por PROJEÇÃO
 
-#### Fragmentação de Dados
-Um dado ou relação será fragmentado e armazenado em diferentes nodos.<br>
-A fragmentação pode ser de 2 formas:
-- Horizontal: os fragmentos são definidos por SELEÇÃO
-- Vertical: os fragmentos são definidos por PROJEÇÃO
+  <br/>
+</details>
+
 
 ---
 
