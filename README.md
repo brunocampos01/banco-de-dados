@@ -1,6 +1,4 @@
-# Banco de Dados 
-
-<img src="images/image_bd.png" width="10%" height="10%" align="right" valign="center"/> 
+# Banco de Dados <img src="images/image_bd.png" width="10%" height="10%" align="right" valign="center"/> 
 
 ![License](https://img.shields.io/badge/Code%20License-MIT-green.svg)
 ![License](https://img.shields.io/badge/SQL-learning-green.svg)
