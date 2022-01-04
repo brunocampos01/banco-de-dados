@@ -1,0 +1,140 @@
+# doc: https://git-scm.com/docs/gitattributes
+# author : brunocampos01
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+* text eol=lf
+
+# Documents
+*.doc  diff=astextplain
+*.DOC  diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF  diff=astextplain
+*.rtf  diff=astextplain
+*.RTF  diff=astextplain
+
+
+*.gitattributes text
+.gitignore      text
+*.md            text
+*.css           text diff=css
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.properties    text
+*.tld           text
+*.tag           text
+*.tagx          text
+*.xml           text
+
+# Shell scripts require LF
+*.sh            text eol=lf
+# Batch scripts require CRLF
+*.bat           text eol=crlf
+###############################################################################
+# Binary Files
+
+# Image, video and compress files are treated 
+# as binary by default and should not be modified.
+###############################################################################
+*.png           binary
+*.jpg           binary
+*.jpeg          binary
+*.gif           binary
+*.ico           binary
+*.mov           binary
+*.mp4           binary
+*.mp3           binary
+*.flv           binary
+*.fla           binary
+*.swf           binary
+*.gz            binary
+*.zip           binary
+*.tar           binary
+*.7z            binary
+*.ttf           binary
+
+###############################################################################
+# Python
+###############################################################################
+
+# Source files
+# ============
+*.pxd    text diff=python eol=lf
+*.py     text diff=python eol=lf
+*.py3    text diff=python eol=lf
+*.pyw    text diff=python eol=lf
+*.pyx    text diff=python eol=lf
+*.pyz    text diff=python eol=lf
+*.pyi    text diff=python eol=lf
+*.ipynb  text diff=python eol=lf
+
+# Binary files
+# ============
+*.db     binary
+*.p      binary
+*.pkl    binary
+*.pickle binary
+*.pyc    binary
+*.pyd    binary
+*.pyo    binary
+
+###############################################################################
+# Java
+###############################################################################
+
+# Binary files
+# ============
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.jar           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+
+###############################################################################
+# reclassifies files
+###############################################################################
+# Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
+*.sh        linguist-language=Shell
+*.rb        linguist-language=Ruby
+*.java      linguist-language=Java
+*.pl        linguist-language=Prolog
+*.Rmd       linguist-language=R
+
+*.py        linguist-language=Python
+*.ipynb     linguist-language=Python
+
+*.sql       linguist-detectable=true
+*.sql       linguist-language=sql
+*.PLpgSQL   linguist-language=sql
+*.TSQL      linguist-language=sql
+
+###############################################################################
+# Vendored code 
+###############################################################################
+# ignore files
+# *.ipynb linguist-vendored=true
+*.html      linguist-vendored=true
+
+*.3         linguist-documentation
+*.1         linguist-documentation
+
+# Apply override to all files in the directory
+# special-vendored-path/* linguist-vendored
+
+###############################################################################
+# export-ignore: don't download this files from github
+###############################################################################
+/.github export-ignore
