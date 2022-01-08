@@ -120,6 +120,7 @@
 
 <details>	
   <summary><a> Deadlocks</a></summary>
+ 
 Lock é quando uma ação está sendo tomada em um banco de dados e para evitar a concorrência de 2 comandos em cima do mesmo registro ou tabela, um lock (travamento) é executado. Quando um lock é ativo a transação por sua vez aguarda o unlock (destravamento) da tarefa que estava a sua frente para assim poder ser executada. 
 <br/>
 Já o DeadLock, é um caso que ocorre nos bancos de dados quando são feitos muitos lock’s que dependem de outros lock’s para prosseguirem, causando uma fila eterna de bloqueio.
@@ -136,6 +137,7 @@ Isso causa um ciclo de dependências (dependência cíclica) e assim impedindo q
 
 <details>	
   <summary><a> Otimização de Consultas</a></summary>
+ 
   É sempre necessário levar em conta:
   - replicação dos dados
   - reconstrução das relações a partir de fragmentos
