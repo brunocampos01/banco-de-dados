@@ -32,7 +32,9 @@ WHERE
 
 -- ---------------------------------------------------------------------------
 -- Buscar o nome e a idade dos pacientes que não residem em Florianópolis
-SELECT nome, idade
+SELECT 
+  nome,
+  idade
 FROM pacientes
 WHERE cidade != 'florianopolis';
 
