@@ -6,7 +6,9 @@ WHERE capacidade > 30;
 
 -- ---------------------------------------------------------------------------
 -- Buscar os dados dos médicos com menos de 40 anos ou com especialidade traumatologia
-SELECT idade, especialidade
+SELECT 
+  idade,
+  especialidade
 FROM medicos
 WHERE 
   idade < 40
@@ -18,7 +20,9 @@ WHERE
 -- Buscar os códigos dos médicos e os códigos dos pacientes, 
 -- para todas as consultas marcadas 
 -- no período da tarde (a partir das 13h) após o dia 15/10/2016
-SELECT cod_m, cod_p
+SELECT 
+  cod_m,
+  cod_p
 FROM consultas
 WHERE 
   hora >= '1300'
