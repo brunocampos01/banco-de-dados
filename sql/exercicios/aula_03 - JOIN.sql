@@ -1,10 +1,3 @@
-﻿SELECT * FROM consultas
-SELECT * FROM medicos
-SELECT * FROM pacientes
-SELECT * FROM ambulatorios
-SELECT * FROM funcionarios
-
-
 -- ---------------------------------------------------------------------------
 -- Buscar o nome dos funcionários que terminam com a letra “a”
 SELECT nome
@@ -15,7 +8,9 @@ WHERE nome LIKE '%o';
 -- ---------------------------------------------------------------------------
 -- Buscar o nome e a especialidade dos médicos cuja 
 -- segunda e a última letra de seus nomes seja a letra “o”
-SELECT nome, especialidade
+SELECT 
+	nome,
+	especialidade
 FROM medicos
 WHERE nome LIKE '_o%o';
 
@@ -31,15 +26,14 @@ SELECT
 FROM pacientes
 WHERE 
   idade > 25
-  AND 
-  (
-    doenca = 'tendinite'
-    OR 
-    doenca = 'fratura'
-    OR
-    doenca = 'gripe'
-    OR 
-    doenca = 'sarampo'
+  AND (
+    	doenca = 'tendinite'
+    	OR 
+    	doenca = 'fratura'
+    	OR
+    	doenca = 'gripe'
+    	OR 
+    	doenca = 'sarampo'
   );
 
 
@@ -54,13 +48,13 @@ SELECT
 FROM 
       (
         SELECT cpf, nome, idade, cidade
-	      FROM pacientes
+	FROM pacientes
         UNION
-	      SELECT cpf, nome, idade, cidade
-	      FROM funcionarios
+	SELECT cpf, nome, idade, cidade
+	FROM funcionarios
         UNION
-	      SELECT cpf, nome, idade, cidade
-	      FROM medicos
+	SELECT cpf, nome, idade, cidade
+	FROM medicos
         ) as todas_pessoas
 WHERE cidade = 'florianopolis';
 
@@ -118,7 +112,7 @@ WHERE
   hora < '1200'
   AND 
   idade < (
-            SELECT idade 
+	    SELECT idade 
             FROM medicos 
             WHERE nome = 'pedro'
           );
@@ -185,7 +179,7 @@ WHERE data='2016-10-12';
 -- possuem consultas marcadas com pacientes que estão com tendinite
 SELECT medicos.nome, medicos.cpf, especialidade
 FROM medicos JOIN consultas ON medicos.codm=consultas.codm
-	JOIN pacientes ON consultas.codp=pacientes.codp
+	     JOIN pacientes ON consultas.codp=pacientes.codp
 WHERE doenca='tendinite';
 
 
@@ -214,4 +208,4 @@ SELECT
 FROM 
   medicos 
     JOIN consultas ON medicos.cod_m=consultas.cod_m
-	FULL JOIN pacientes ON consultas.cod_p=pacientes.cod_p;
+    FULL JOIN pacientes ON consultas.cod_p=pacientes.cod_p;
