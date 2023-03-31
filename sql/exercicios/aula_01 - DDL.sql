@@ -116,11 +116,11 @@ SELECT * FROM funcionarios;
   - hora (time) (não nulo)
 */
 CREATE TABLE consultas(
-  	cod_c     INT PRIMARY KEY,
-	cod_m     INT,
-	cod_p     INT,
-	data      DATE NOT NULL,
-	hora      TIME NOT NULL,
+  	cod_c INT PRIMARY KEY,
+	cod_m INT,
+	cod_p INT,
+	data DATE NOT NULL,
+	hora TIME NOT NULL,
   	FOREIGN KEY (cod_m) REFERENCES medicos (cod_m),
 	FOREIGN KEY (cod_p) REFERENCES pacientes (cod_p)
 );
