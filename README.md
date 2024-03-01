@@ -12,6 +12,12 @@
 - [SQL: aulas](sql/aulas)
 - [SQL: exercícios resolvidos](sql/exercicios)
 - [SQL: execução dos exercícios resolvidos direto no navegador](https://colab.research.google.com/drive/1_X-KgO7pNk_VU2w52FVcyHsSCjRLnsiE?usp=sharing)
+	<details>	
+	  <summary>Exemplos</summary>
+	  <img src="https://github.com/brunocampos01/brunocampos01/blob/main/images/gif_googlecolab_database.gif" />
+	  <br/>
+	</details>
+
  
 ---
 
